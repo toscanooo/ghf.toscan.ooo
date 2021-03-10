@@ -44,6 +44,7 @@ class NetworkManager {
                 let followers = try decoder.decode([Follower].self, from: data)
                 completed(followers,nil)
             } catch {
+                print(error.localizedDescription)
                 completed(nil,"Ocorreu um problema com Decoder")
             }
         }
